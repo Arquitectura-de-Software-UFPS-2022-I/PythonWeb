@@ -1,0 +1,27 @@
+{% extends 'plantilla.html'%}
+
+{% block title%}
+Home
+{% endblock %}
+
+{% block content%}
+<form action="uploadFile" method="POST" enctype="multipart/form-data">
+
+    <div class="form-group">
+        <input class="form-control form-control-user" type="file" name="file" />
+   
+    </div>
+
+    
+    <div class="form-group">
+        <input class="btn btn-primary btn-user btn-block" type="submit" />
+   
+    </div>
+
+</form>
+
+
+{% endblock %}
+
+
+

@@ -1,0 +1,36 @@
+{% extends 'plantilla.html'%}
+
+{% block title%}
+Home
+{% endblock %}
+
+{% block content%}
+<div class="row">
+    <div class="col-sm-4">
+      <div class="card  border-warning">
+        <div class="card-body">
+          <h5 class="card-title">Profile</h5>
+          <div class="d-grid gap-2"><a href="" class="btn btn-outline-warning">View</a></div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="card border-info">
+        <div class="card-body">
+          <h5 class="card-title">Upload Signature</h5>
+          <div class="d-grid gap-2"><a href="{{ url_for('upload_file') }}" class="btn btn-outline-info">View</a></div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="card border-primary">
+        <div class="card-body">
+          <h5 class="card-title">Documents</h5>
+          <div class="d-grid gap-2"><a href="" class="btn btn-outline-primary">View</a></div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}
