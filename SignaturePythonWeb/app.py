@@ -1,3 +1,4 @@
+import re
 from signaturelib import services
 
 import os
@@ -35,6 +36,7 @@ class User(db.Model, UserMixin):
     email = db.Column(db.String(40), nullable=True, unique=True)
     username = db.Column(db.String(20), nullable=True)
     password = db.Column(db.String(20), nullable=True)
+    id_api = db.Column(db.Integer, nullable=True, unique=True)
 
 
 db.create_all()
@@ -104,36 +106,66 @@ def logout():
 def register():
     form = RegisterForm()
     if form.validate_on_submit():
-        new_user = User(name=form.name.data, email=form.email.data,
-                        username=form.username.data, password=form.password.data)
+        api_user = services.register_user(
+            name=form.name.data, email=form.email.data, username=form.username.data, password=form.password.data)
+
+        new_user = User(name=api_user.full_name, email=api_user.email,
+                        username=api_user.username, password=api_user.password, id_api=api_user.id)
         db.session.add(new_user)
         db.session.commit()
-        services.register_user(
-            name=form.name.data, email=form.email.data, username=form.username.data, password=form.password.data)
+
         login_user(new_user)
         return redirect(url_for('home'))
     return render_template('register.html', form=form)
 
 
-@app.route('/uploadFile', methods=['GET', 'POST'])
-def upload_file():
+@app.route('/uploadSignature', methods=['GET', 'POST'])
+def upload_signature():
 
     if request.method == 'POST':
         file = request.files['file']
         if file:
-            file.save(os.path.join(app.config['UPLOAD_FOLDER'], file.filename))
-
+            file.save(os.path.join(
+                app.config['UPLOAD_FOLDER'], file.filename))
             if services.validate_signature(app.config['UPLOAD_FOLDER'] + '/' + file.filename):
-                email = current_user.email
-                user = services.session.query(
-                    User).filter_by(email=email).first()
+                services.insert_signature(current_user.id_api, file.filename, os.path.join(
+                    app.config['UPLOAD_FOLDER'], file.filename))
+                return redirect(url_for('profile'))
+            return render_template('uploadSignature.html')
+    return render_template('uploadSignature.html')
 
-                services.insert_signature(user.id, file.filename, file)
-                return render_template('profile.html')
 
-            return redirect(url_for('upload_file'))
-    return render_template('uploadFile.html')
+@app.route('/profile')
+def profile():
+    image = services.get_file(services.get_user(current_user.id_api).signature)
+    return render_template('profile.html', img_data=image.file)
+
+
+@app.route('/registerRequestSignature', methods=['GET', 'POST'])
+def register_request_signature():
+    if request.method == 'POST':
+        file = request.files['file']
+        if file:
+            file.save(os.path.join(
+                app.config['UPLOAD_FOLDER'], file.filename))
+
+            services.register_request_signature(current_user.id_api, file.filename, os.path.join(
+                app.config['UPLOAD_FOLDER'], file.filename), request.form.get('subject'))
+
+            return render_template('home.html')
+    return render_template('registerRequestSignature.html')
+
+
+@app.route('/getRequestsSignature')
+def get_requests_signature():
+    requests = services.get_request_signature_by_user(current_user.id_api)
+    return render_template('requestsSignature.html', requests=requests)
 
 
 if __name__ == '__main__':
     app.run(debug=True)
+
+
+'''
+
+'''

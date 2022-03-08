@@ -1,0 +1,17 @@
+{% extends 'plantilla.html'%}
+
+{% block title%}
+Home
+{% endblock %}
+
+{% block content%}
+
+{% for request in requests %}
+
+{{request}}
+
+{% endfor %}
+{% endblock %}
+
+
+
