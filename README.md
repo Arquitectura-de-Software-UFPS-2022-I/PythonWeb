@@ -19,9 +19,7 @@ Aplicación Web que permite firmar y solicitar firmas en documentos tipo PDF.
 
 #### Tecnologías
 
-Desarrollo Backend = MicroFramework Flask v2.0.3
-
-Desarrollo Frontend = Boostrap 5
+Desarrollo Backend = MicroFramework Flask v2.0.3 .... Desarrollo Frontend = Boostrap 5
 
 
 ---
