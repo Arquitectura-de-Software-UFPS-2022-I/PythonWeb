@@ -5,6 +5,7 @@
 
 1. [Características](#características)
 2. [Tecnologías](#tecnologías)
+3. [Instalacion](#instalacion)
 3. [Autores](#autores)
 4. [Institución Académica](#institución-académica)
 
@@ -12,13 +13,14 @@
 ---
 
 #### Características:
--Aplicación Web que permite firmar y solicitar firmas en documentos tipo PDF.
+Aplicación Web que permite firmar y solicitar firmas en documentos tipo PDF.
 
 ---
 
 #### Tecnologías
 
 Desarrollo Backend = MicroFramework Flask v2.0.3
+
 Desarrollo Frontend = Boostrap 5
 
 
