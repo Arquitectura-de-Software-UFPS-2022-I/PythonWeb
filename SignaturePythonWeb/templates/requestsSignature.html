@@ -31,7 +31,7 @@ Home
           <td>{{request.id}}</td>
           <td class="date">{{request.create_date[0:10]}}</td>
           <td>
-            <div class="text-center"><a href="{{ url_for('register_request_signature_user', id=request.id) }}" type="button" class="btn btn-primary">Ask for Signature</a></td></div>
+            <div class="text-center"><a href="{{ url_for('register_request_signature_user', id=request.id) }}" type="button" class="btn btn-primary">Request Signature</a></td></div>
             
           <td> <div class="text-center"><a href="{{ url_for('get_list_signature_request_user_by_request_id_and_signed', id=request.id) }}" type="button" class="btn btn-dark">View Signatures</a></td></div>
         </tr>
