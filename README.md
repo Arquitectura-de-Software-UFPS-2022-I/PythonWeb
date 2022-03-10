@@ -3,9 +3,9 @@
 
 ## Indice
 
-1. [Características](#caracteristicas)
+1. [Características](#características)
 2. [Requerimientos](#requerimientos)
-3. [Tecnologias](#tecnologias)
+3. [Tecnologías](#tecnologías)
 4. [IDE](#ide)
 5. [Demo](#demo)
 6. [Autores](#autores)
@@ -15,7 +15,7 @@
 ---
 
 #### Características:
--Software que permite firmar digitalmente un documento en formato PDF
+-Aplicación Web que permite firmar digitalmente un documento en formato PDF
 
 ---
 #### Requerimientos
@@ -45,10 +45,18 @@ Demo de la Aplicación
 
 #### Autores
 
-[Jose Luis Tarazona](<https://github.com/JoseLuisTF>) Código: 1151503 (<joseluistf@ufps.edu.co>)
-[Jhoana Maria Rincón](<https://github.com/JhoanaMaria>) Código: 1151515 (<jhoanamariarp@ufps.edu.co>)
-[Jesús Leonardo Rodriguez] Código: 1151390 (<jesusleonardorg@ufps.edu.co>)
-[Freddy Chia] Código: 1151494 (<freddysebastiancv@ufps.edu.co>)
+- **[Jose Luis Tarazona](<https://github.com/JoseLuisTF>)**
+
+    **Código:** 1151503   **Correo:** <joseluistf@ufps.edu.co>
+- **[Jhoana Maria Rincón](<https://github.com/JhoanaMaria>)**
+
+    **Código:** 1151515  **Correo:** (<jhoanamariarp@ufps.edu.co>)
+- **[Jesús Leonardo Rodriguez](<https://github.com/j-Lkira>)**
+
+    **Código:** 1151390  **Correo:** (<jesusleonardorg@ufps.edu.co>)
+- **[Freddy Chia](<https://github.com/>)** 
+
+    **Código:** 1151494 **Correo:** (<freddysebastiancv@ufps.edu.co>)
 
 ---
 
