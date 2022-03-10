@@ -54,7 +54,7 @@ Demo de la Aplicación
 - **[Jesús Leonardo Rodriguez](<https://github.com/j-Lkira>)**
 
     **Código:** 1151390  **Correo:** (<jesusleonardorg@ufps.edu.co>)
-- **[Freddy Chia](<https://github.com/>)** 
+- **[Freddy Chia](<https://github.com/Izequ>)** 
 
     **Código:** 1151494 **Correo:** (<freddysebastiancv@ufps.edu.co>)
 
