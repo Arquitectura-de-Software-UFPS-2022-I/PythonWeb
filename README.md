@@ -4,42 +4,42 @@
 ## Indice
 
 1. [Características](#características)
-2. [Requerimientos](#requerimientos)
-3. [Tecnologías](#tecnologías)
-4. [IDE](#ide)
-5. [Demo](#demo)
-6. [Autores](#autores)
-7. [Institución Académica](#institución-académica)
+2. [Tecnologías](#tecnologías)
+3. [Autores](#autores)
+4. [Institución Académica](#institución-académica)
 
 
 ---
 
 #### Características:
--Aplicación Web que permite firmar digitalmente un documento en formato PDF
-
----
-#### Requerimientos
-
+-Aplicación Web que permite firmar y solicitar firmas en documentos tipo PDF.
 
 ---
 
 #### Tecnologías
 
+Desarrollo Backend = MicroFramework Flask v2.0.3
+Desarrollo Frontend = Boostrap 5
 
 
 ---
 
-#### IDE
 
--
--
+#### Instalacion
 
----
+Clonar repositorio
+```bash
+git clone https://github.com/Arquitectura-de-Software-UFPS-2022-I/PythonWeb.git
+```
 
-#### DEMO
-
-Demo de la Aplicación 
-`<link>` : <>
+Instalar requerimientos
+```
+pip install -r requirements.txt
+```
+Ejecutar aplicacion (ubicarse en la ruta del archivo 'app.py')
+```
+python app.py
+```
 
 ---
 
