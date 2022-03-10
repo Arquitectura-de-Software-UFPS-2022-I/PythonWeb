@@ -1,0 +1,41 @@
+{% extends 'plantilla.html'%}
+
+{% block title%}
+Home
+{% endblock %}
+
+{% block content%}
+<form action="" method="POST">
+    {{ form.hidden_tag() }} 
+    <div class="form-group">
+        <label>Select User</label>
+      {{ form.user }}
+  </div>
+  <div class="form-group">
+    <label>Enter position x for signature</label>
+    {{ form.pos_x }} 
+  </div>
+  <div class="form-group">
+    <label>Enter position y for signature</label>
+    {{ form.pos_y }}
+  </div>
+  <div class="form-group">
+    <label>Enter page number for signature</label>
+    {{ form.num_page }} 
+  </div>
+
+  <div class="form-group">
+    {{form.submit }}
+  </div>
+    
+   
+    
+    
+   
+  </form>
+
+
+{% endblock %}
+
+
+

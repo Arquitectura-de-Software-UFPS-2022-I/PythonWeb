@@ -47,9 +47,15 @@
             </li>
 
             <li class="nav-item active">
-                <a class="nav-link" href="{{ url_for('home')}}">
+                <a class="nav-link" href="{{ url_for('get_requests_signature')}}">
 
-                    <span>Documents</span></a>
+                    <span>My Documents</span></a>
+            </li>
+
+            <li class="nav-item active">
+                <a class="nav-link" href="{{ url_for('get_list_signature_request_user_by_user_id')}}">
+
+                    <span>Signatures Requested</span></a>
             </li>
 
             <!-- Divider -->
@@ -112,8 +118,8 @@
 
                 <!-- Begin Page Content -->
 
-                <div class="container-fluid">
-                    <h1> {% block content%} Plantilla Base {% endblock %} </h1>
+                <div class="container">
+                     {% block content%} <h1>Plantilla Base</h1>  {% endblock %}
                 </div>
 
                 <!-- /.container-fluid -->

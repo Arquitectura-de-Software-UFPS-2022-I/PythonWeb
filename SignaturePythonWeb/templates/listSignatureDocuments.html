@@ -1,0 +1,85 @@
+{% extends 'plantilla.html'%}
+
+{% block title%}
+Home
+{% endblock %}
+
+{% block content%}
+
+<div class="card">
+    <div class="card-header">
+       <b> Pending Signature Requests for {{data[0][1]}}</b>
+    </div>
+    <div class="card-body">
+
+        <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Receiver</th>
+                <th scope="col">Document</th>
+                <th scope="col">Request Date</th>
+                <th scope="col">State</th>
+              </tr>
+            </thead>
+            <tbody>
+                {% for value1, value2 in requests|zip(data) %}
+                {% if value1.signed == False%}
+              <tr>
+                <th scope="row"> {{ loop.index}} </th>
+                <td>{{value2[0]}}</td>
+                <td>{{value2[1]}}</td>
+                <td class="date">{{value1.created_date[0:10]}}</td>
+                <td>Pending</td>
+              </tr>
+              {% endif %}
+              {% endfor %}
+            </tbody>
+          </table>
+        
+
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+        <b>Signed Signature Requests for {{data[0][1]}}</b> 
+    </div>
+    <div class="card-body">
+
+        <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Receiver</th>
+                <th scope="col">Document</th>
+                <th scope="col">Request Date</th>
+                <th scope="col">State</th>
+                <th scope="col">Signature Date</th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for value1, value2 in requests|zip(data) %}
+                {% if value1.signed == True%}
+              <tr>
+                <th scope="row"> {{ loop.index}} </th>
+                <td>{{value2[0]}}</td>
+                <td>{{value2[1]}}</td>
+                <td class="date">{{value1.created_date[0:10]}}</td>
+                <td>Signed</td>
+                <td> {{value1.signature_date[0:10]}} </td>
+                <td> <div class="text-center"><a href="http://52.240.59.172:8000/api/v1/generate_pdf/{{value1.request}}/" type="button" class="btn btn-primary">Download</a> <div class="text-center"></div></td>
+              </tr>
+              {% endif %}
+              {% endfor %}
+            </tbody>
+          </table>
+
+
+
+    </div>
+  </div>
+
+  
+{% endblock %}

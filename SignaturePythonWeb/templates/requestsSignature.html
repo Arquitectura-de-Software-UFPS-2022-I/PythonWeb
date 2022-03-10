@@ -6,11 +6,61 @@ Home
 
 {% block content%}
 
-{% for request in requests %}
 
-{{request}}
+<div class="card">
+  <div class="card-header">
+    <b>My Uploaded Documents</b>
+  </div>
+  <div class="card-body">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Document</th>
+          <th scope="col">Subject</th>
+          <th scope="col">Date</th>
+          <th scope="col"></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+          {% for request in requests %}
+        <tr>
+          <th scope="row"> {{ loop.index}} </th>
+          <td>{{request.document}}</td>
+          <td>{{request.id}}</td>
+          <td class="date">{{request.create_date[0:10]}}</td>
+          <td>
+            <div class="text-center"><a href="{{ url_for('register_request_signature_user', id=request.id) }}" type="button" class="btn btn-primary">Ask for Signature</a></td></div>
+            
+          <td> <div class="text-center"><a href="{{ url_for('get_list_signature_request_user_by_request_id_and_signed', id=request.id) }}" type="button" class="btn btn-dark">View Signatures</a></td></div>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  
+    
+  </div>
+  <div class="card-footer text-center text-muted">
 
-{% endfor %}
+      <div >
+        <a href="{{ url_for('register_request_signature') }}" class="btn btn-info">Add File</a>
+    
+      
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
 {% endblock %}
 
 

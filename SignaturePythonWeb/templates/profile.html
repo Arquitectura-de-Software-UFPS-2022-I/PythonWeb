@@ -5,34 +5,50 @@ Login
 {% endblock %}
 
 {% block content%}
+   
+<div class="card">
+    <div class="card-header">
+      <b>My Profile</b>
+    </div>
 
-<div class="card-body">
-    <div class="table-responsive">
-        <table  class="table table-hover table-striped table-bordered">                        
-            <tbody>
-                 <tr>
-                    <th>Nombre</th>
-                    <td>{{current_user.name}}</td>
-                </tr>
-                 <tr>
-                     <th>Email</th>
-                     <td>{{current_user.email}}</td>
-                 </tr>
-                 <tr>
-                     <th>Username</th>
-                     <td>{{current_user.username}}</td>
-                 </tr>
-                <tr>
-                    <th>Firma</th>
-                    <td><img src="{{ img_data }}" alt="img_data"  id="imgslot" style="max-height: 350px; max-width: 350px;"/></td>
-                </tr>
-                
-            </tbody>
-        </table>
+
+    <div class="card-body">
+        <div class="table-responsive">
+            <table  class="table table-hover table-striped table-bordered">                        
+                <tbody>
+                     <tr>
+                        <th>Nombre</th>
+                        <td>{{current_user.name}}</td>
+                    </tr>
+                     <tr>
+                         <th>Email</th>
+                         <td>{{current_user.email}}</td>
+                     </tr>
+                     <tr>
+                         <th>Username</th>
+                         <td>{{current_user.username}}</td>
+                     </tr>
+                    <tr>
+                        <th>Firma</th>
+                        <td><img src="{{ img_data }}" alt="img_data"  id="imgslot" style="max-height: 350px; max-width: 350px;"/></td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>        
     </div>        
-</div>        
+
+    <div class="card-footer text-center text-muted">
+  
+        <div >
+          <a href="{{ url_for('upload_signature') }}" class="btn btn-info">Add Signature</a>
+      
+        
+  
+      </div>
+    </div>
+  </div>
 
 {% endblock content%}
 
 
-   
