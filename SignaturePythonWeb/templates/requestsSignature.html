@@ -26,8 +26,8 @@ Home
           {% for request in requests %}
         <tr>
           <th scope="row"> {{ loop.index}} </th>
-          <td>{{request.document}}</td>
-          <td>{{request.id}}</td>
+          <td><a href="http://52.240.59.172:8000/api/v1/generate_pdf/{{request.id}}/">{{request.document}}</a> </td>
+          <td>{{request.subject}}</td>
           <td class="date">{{request.create_date[0:10]}}</td>
           <td>
             <div class="text-center"><a href="{{ url_for('register_request_signature_user', id=request.id) }}" type="button" class="btn btn-primary">Request Signature</a></td></div>

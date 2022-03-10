@@ -29,7 +29,7 @@ Home
               <tr>
                 <th scope="row"> {{ loop.index}} </th>
                 <td>{{value2[0]}}</td>
-                <td>{{value2[1]}}</td>
+                <td> <a href="http://52.240.59.172:8000/api/v1/generate_pdf/{{value1.request}}/">{{value2[1]}}</a> </td>
                 <td class="date">{{value1.created_date[0:10]}}</td>
                 <td>Pending</td>
                 <td> <div class="text-center"><a href="{{ url_for('approve_signature', id=value1.id) }}" type="button" class="btn btn-primary">Sign</a></div></td>
